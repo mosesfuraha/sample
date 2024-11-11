@@ -1,0 +1,101 @@
+<div class="register-container">
+  <h2>Create an account</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        formControlName="firstName"
+        placeholder="Enter your first name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="secondName">Second Name</label>
+      <input
+        type="text"
+        id="secondName"
+        formControlName="secondName"
+        placeholder="Enter your second name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Enter your email"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="workExperience">Work Experience</label>
+      <textarea
+        id="workExperience"
+        formControlName="workExperience"
+        placeholder="Describe your work experience"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="contactInformation">Contact Information</label>
+      <input
+        type="text"
+        id="contactInformation"
+        formControlName="contactInformation"
+        placeholder="Enter your contact information"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="highSchoolOrUniversity">High School or University</label>
+      <input
+        type="text"
+        id="highSchoolOrUniversity"
+        formControlName="highSchoolOrUniversity"
+        placeholder="Enter your educational institution"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        placeholder="Enter your password"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        formControlName="confirmPassword"
+        placeholder="Confirm your password"
+        required
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="submit-btn"
+      [disabled]="form.invalid || (isSubmitting$ | async)"
+    >
+      Sign Up
+    </button>
+  </form>
+
+  <p class="login-link">
+    Already have an account?
+    <a href="/login">Log in</a>
+  </p>
+</div>
